@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
 
+<head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta charset="UTF-8">
@@ -16,43 +16,91 @@
 	<link rel="stylesheet" href="../src/Control.MiniMap.css" />
 	<script src="../src/Control.MiniMap.js" type="text/javascript"></script>
 	<!-- Leaflet Plugins -->
-
 	<link rel="stylesheet" href="./assets/css/main.css">
 
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+		integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
 </head>
+
 <body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+			<a class="navbar-brand" href="#">Navbar</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+				aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item active">
+						<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">Link</a>
+					</li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+							aria-haspopup="true" aria-expanded="false"> Dropdown </a>
+						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+							<a class="dropdown-item" href="#">Action</a>
+							<a class="dropdown-item" href="#">Another action</a>
+							<div class="dropdown-divider"></div>
+							<a class="dropdown-item" href="#">Something else here</a>
+						</div>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+					</li>
+				</ul>
+				<form class="form-inline my-2 my-lg-0">
+					<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+					<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+				</form>
+			</div>
+		</nav>
 
 	<div id="map">
-		<div id="boton">
-			<button id="copenhague">Copenhague</button>
-			<div>
-				<button id="barcelona">Barcelona</button>
-				<div>
-					<button id="berlin">Berlin</button>
-					<div>
-						<button id="tokyo">Tokyo</button>
-						<div>
-							<button id="londres">Londres</button>
-							<div>
-								<button id="nuevayork">NuevaYork</button>
-								<div>
-									<button id="paris">Paris</button>
-									<div>
-										<button id="viena">Viena</button>
-										<div>
-											<button id="stop"><b>stop</b></button>
-	
-</body>
 
+
+		
+
+
+
+		<div id="boton">
+			<button id="copenhague" class="btn btn-sm btn-primary mb-1">Copenhague</button>
+			<div>
+				<button id="barcelona" class="btn btn-sm btn-primary mb-1">Barcelona</button>
+				<div>
+					<button id="berlin" class="btn btn-sm btn-primary mb-1">Berlin</button>
+					<div>
+						<button id="tokyo" class="btn btn-sm btn-primary mb-1">Tokyo</button>
+						<div>
+							<button id="londres" class="btn btn-sm btn-primary mb-1">Londres</button>
+							<div>
+								<button id="nuevayork" class="btn btn-sm btn-primary mb-1">NuevaYork</button>
+								<div>
+									<button id="paris" class="btn btn-sm btn-primary mb-1">Paris</button>
+									<div>
+										<button id="viena" class="btn btn-sm btn-primary mb-1">Viena</button>
+										<div>
+											<button id="stop" class="btn btn-sm btn-danger"><b>stop</b></button>
+</body>
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
 	integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
 	crossorigin="" />
 <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
 	integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
 	crossorigin=""></script>
-
 <script src="./assets/js/main.js"></script>
 
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+	integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+</script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+	integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
+</script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+	integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous">
+</script>
+
 </html>
-
-
