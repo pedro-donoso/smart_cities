@@ -1,164 +1,58 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="description" content="Mapa Web">
-<meta name="keywords" content="HTML , Mapa, Ciudades">
-<title>Smart Cities</title>
-<meta name='viewport' content='initial-scale=1.0,maximum-scale=1.0,user-scalable=no' />
-<!-- Cargamos Leaflet -->
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.1/dist/leaflet.css" />
-<script src="https://unpkg.com/leaflet@1.0.1/dist/leaflet.js"></script>
-<!-- Leaflet Plugins -->
-<link rel="stylesheet" href="../src/Control.MiniMap.css" /> 
-<script src="../src/Control.MiniMap.js"
-type="text/javascript"></script> 
-<style>
-body {
- padding: 0px;
- margin: 0;
-}
-html, body, #map {
- height: 100%;
-}
-#boton {
-position: absolute;
-color: cyan;
-left: 10px;
-top: 10px;
-z-index: 500
-}
-.info {
-	padding: 6px 8px;
-	font: 10px Verdana;
-	background: white;
-	background: rgba(255,255,255,0.8);
-	box-shadow: 0 0 15px rgba(0,0,0,0.2);
-	border-radius: 5px;
-}
-.info h2 {
-	margin: 0 0 5px;
-	color: #777;
-}
-</style>   	
+
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="UTF-8">
+	<meta name="description" content="Mapa Web">
+	<meta name="keywords" content="HTML , Mapa, Ciudades">
+	<title>Smart Cities</title>
+	<!-- Cargamos Leaflet -->
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" />
+	<script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
+	<!-- Cargamos Leaflet -->
+	<!-- Leaflet Plugins -->
+	<link rel="stylesheet" href="../src/Control.MiniMap.css" />
+	<script src="../src/Control.MiniMap.js" type="text/javascript"></script>
+	<!-- Leaflet Plugins -->
+
+	<link rel="stylesheet" href="./assets/css/main.css">
+
 </head>
 <body>
-<div id="map" >
-<div id="boton">
-<button id="copenhague">Copenhague</button>
-<div>
-<button id="barcelona">Barcelona</button>
-<div>
-<button id="berlin">Berlin</button>
-<div>
-<button id="tokyo">Tokyo</button>
-<div>
-<button id="londres">Londres</button>
-<div>
-<button id="nuevayork">NuevaYork</button>
-<div>
-<button id="paris">Paris</button>
-<div>
-<button id="viena">Viena</button>
-<div>
-<button id="stop"><b>stop</b></button>
-<script type="text/javascript">	
-//base
-var map = L.map('map', { zoomControl: false }).setView([48.23, 16.37],12);
-var title = L.control(); 
-title.onAdd = function (map) {
-var div = L.DomUtil.create('div', 'info');
-div.innerHTML +=
-'<h2>Smart Cities</h2>y sus características';
-return div;
-}; 
-title.addTo(map);
-//----------------------------------------------------------------------
-//mapas base
-var outdoors = 'http://{s}.tile.thunderforest.com/outdoors/{z}/{x}/{y}.png';
-var osmUrl='http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
-var landscape = 'http://{s}.tile.thunderforest.com/landscape/{z}/{x}/{y}.png';
-var transport = 'http://{s}.tile.thunderforest.com/transport/{z}/{x}/{y}.png';
-var mono = 'http://{s}.tiles.wmflabs.org/bw-mapnik/{z}/{x}/{y}.png';
-var plano ='http://stamen-tiles-{s}.a.ssl.fastly.net/toner-lite/{z}/{x}/{y}.png';
-var cartoUrl='http://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png';
-var cycle = 'http://{s}.tile.thunderforest.com/cycle/{z}/{x}/{y}.png'
-var baseLayers = {
-Outdoors: L.tileLayer(outdoors, {minZoom: 1, maxZoom: 18}),
-OSM:  L.tileLayer(osmUrl, {minZoom: 1, maxZoom: 18}),
-Landscape: L.tileLayer(landscape, {minZoom: 1, maxZoom: 18}),
-Transport: L.tileLayer(transport, {minZoom: 1, maxZoom: 18}),
-Mono: L.tileLayer(mono, {minZoom: 1, maxZoom: 18}),
-Plano: L.tileLayer(plano, {minZoom: 1, maxZoom: 18}),
-DarkMap: L.tileLayer(cartoUrl, {minZoom: 1, maxZoom: 18}),
-Cycle: L.tileLayer(cycle, {minZoom: 1, maxZoom: 18}),
-};
-//cuadro
-map.addLayer(baseLayers.Outdoors);
-L.control.layers(baseLayers).addTo(map);
-//zoom
-new L.Control.Zoom({ position: 'topright'}).addTo(map); 
-//viajes
-</script>
-<script type="text/javascript">
-var barcelona = [41.41, 2.17];
-var copenhague = [55.70, 12.56];
-var berlin = [52.55, 13.40];
-var tokyo = [35.71, 139.69];
-var londres = [51.55, -0.11];
-var nuevayork = [40.74, -74.00];
-var paris = [48.88, 2.35];
-var viena = [48.23, 16.37];
-//vuelo
-document.getElementById('barcelona').onclick = function () { map.flyTo(barcelona, 12, {duration: 9}); };
-document.getElementById('copenhague').onclick = function () { map.flyTo(copenhague, 12, {duration: 9}); };
-document.getElementById('berlin').onclick = function () { map.flyTo(berlin, 12, {duration: 9}); };
-document.getElementById('tokyo').onclick = function () { map.flyTo(tokyo, 12, {duration: 9}); };
-document.getElementById('londres').onclick = function () { map.flyTo(londres, 12, {duration: 9}); };
-document.getElementById('nuevayork').onclick = function () { map.flyTo(nuevayork, 12, {duration: 9}); };
-document.getElementById('paris').onclick = function () { map.flyTo(paris, 12, {duration: 9}); };
-document.getElementById('viena').onclick = function () { map.flyTo(viena, 12, {duration: 9}); };
-document.getElementById('stop').onclick = function () { map.stop(); };
-//marcadores
-var myMarker1 = L.marker([41.38, 2.17]);
-var myMarker2 = L.marker([55.67, 12.56]);
-var myMarker3 = L.marker([52.52, 13.40]);
-var myMarker4 = L.marker([35.68, 139.69]);
-var myMarker5 = L.marker([51.52, -0.11]);
-var myMarker6 = L.marker([40.71, -74.00]);
-var myMarker7 = L.marker([48.85, 2.35]);
-var myMarker8 = L.marker([48.20, 16.37]);
-var geoJsonLayer = L.geoJson().addTo(map);			
-map.addLayer(myMarker1);
-map.addLayer(myMarker2);
-map.addLayer(myMarker3);
-map.addLayer(myMarker4);
-map.addLayer(myMarker5);
-map.addLayer(myMarker6);
-map.addLayer(myMarker7);
-map.addLayer(myMarker8);
-//textos			
-var point = L.marker([41.38, 2.17]).addTo(map).bindPopup
-("<center><b>BARCELONA, ESPAÑA:</b></center> <li>Es pionera en soluciones de Smart city y en la disminución de emisiones de carbono. </li><li>Fue una de las primeras en utilizar sistemas de ordenanza solar térmica y lanzó su proyecto LIVE EV, que promueve la compra de vehículos eléctricos y cambiará la infraestructura eléctrica de la ciudad.</li>");				
-var point = L.marker([55.67, 12.56]).addTo(map).bindPopup
-("<center><b>COPENHAGUE, DINAMARCA:</b></center> <li>Posicionada en el primer puesto de los rankings de ciudades verdes en Europa. </li><li>Es líder en innovación sustentable, se comprometió a alcanzar neutralidad de carbono y gran parte de sus habitantes se transportan en bicicleta.</li>");
-var point = L.marker([52.52, 13.40]).addTo(map).bindPopup
-("<center><b>BERLIN, ALEMANIA:</b></center> <li>En los Rankings la ciudad alemana esta en los puestos mas altos en innovación, sustentabilidad y calidad de vida. </li><li>Berlin prueba con tecnología del vehiculo a la red V2G, con la intención de crear una planta de energía virtual que provenga de vehículos eléctricos.</li>");
-var point = L.marker([35.68, 139.69]).addTo(map).bindPopup
-("<center><b>TOKYO, JAPÓN:</b></center> <li>La ciudad anunció sus planes de crear un pueblo inteligente en sus suburbios, con casas con paneles solares integrados, baterías almacenadas y tecnología con uso energético eficiente, todos conectados a una red inteligente. </li>");
-var point = L.marker([51.52, -0.11]).addTo(map).bindPopup
-("<center><b>LONDRES, INGLATERRA:</b></center> <li>Alberga el centro de investigación Smart Cities que trabaja en mejorar el transporte, gobierno, negocios y la información académica y de consumo.</li> <li>Eficiente e innovadora, cuenta con una de las redes Wi-Fi gratuitas más grande de Europa.</li>");
-var point = L.marker([40.71, -74.00]).addTo(map).bindPopup
-("<center><b>NUEVA YORK, ESTADOS UNIDOS:</b></center> <li>Dedicada a atender la creciente demanda por las complejas capacidades de construir una ciudad inteligente y ayudar a sus clientes a optimizar sus procesos de negocio, previniendo incendios y ayudandole a la ciudad a ahorrar recursos</li>");
-var point = L.marker([48.85, 2.35]).addTo(map).bindPopup
-("<center><b>PARIS, FRANCIA:</b></center> <li>Está en los primeros lugares de innovación, ciudades sustentables y en gobierno digital. </li><li>Es pionera programas de bicicletas para sus ciudadanos y lanzó un sistema para vehículos eléctricos con cientos de estaciones de renta.</li>");
-var point = L.marker([48.20, 16.37]).addTo(map).bindPopup
-("<center><b>VIENA, AUSTRIA:</b></center> <li>En los primeros lugares de las categorías consideradas: innovación, sustentabilidad, calidad de vida y gobierno digital. </li><li>Viena estableció ambiciosas metas, para renovar las fuentes de energía de la ciudad, y modificar infraestructura.</li>");
-//minimapa
-var osm2 = new L.TileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {minZoom:0, maxZoom: 13});
-var miniMap = new L.Control.MiniMap(osm2, { toggleDisplay: true, minimized: true, position: 'bottomright' }).addTo(map); 
-var escala = L.control.scale({ position: 'bottomleft', imperial: false});
-map.addControl(escala);
-</script>
+
+	<div id="map">
+		<div id="boton">
+			<button id="copenhague">Copenhague</button>
+			<div>
+				<button id="barcelona">Barcelona</button>
+				<div>
+					<button id="berlin">Berlin</button>
+					<div>
+						<button id="tokyo">Tokyo</button>
+						<div>
+							<button id="londres">Londres</button>
+							<div>
+								<button id="nuevayork">NuevaYork</button>
+								<div>
+									<button id="paris">Paris</button>
+									<div>
+										<button id="viena">Viena</button>
+										<div>
+											<button id="stop"><b>stop</b></button>
+	
 </body>
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+	integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+	crossorigin="" />
+<script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+	integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+	crossorigin=""></script>
+
+<script src="./assets/js/main.js"></script>
+
 </html>
+
+

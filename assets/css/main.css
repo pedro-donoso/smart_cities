@@ -1,0 +1,32 @@
+body {
+    padding: 0px;
+    margin: 0;
+}
+
+html,
+body,
+#map {
+    height: 100%;
+}
+
+#boton {
+    position: absolute;
+    color: cyan;
+    left: 10px;
+    top: 10px;
+    z-index: 500
+}
+
+.info {
+    padding: 6px 8px;
+    font: 10px Verdana;
+    background: white;
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+}
+
+.info h2 {
+    margin: 0 0 5px;
+    color: #777;
+}
