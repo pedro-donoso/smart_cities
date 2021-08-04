@@ -1,12 +1,15 @@
-https://pedro-donoso.github.io/smart_cities/
+[https://pedro-donoso.github.io/smart_cities/](https://pedro-donoso.github.io/smart_cities/)
 
-## [EN PROCESO] 
+![](https://user-images.githubusercontent.com/68760595/128254319-d8e73728-ecea-4db0-82d5-d09830716abe.PNG)
 
-- selector diferentes mapas
-- botones de desplazamiento a ciudades
-- botones de zoom
-- marcadores coordenados
-- ventanas emergentes con información de ciudades
+## \[EN PROCESO\]
 
-# smart_cities
- proyecto ciudades inteligentes
+*   selector diferentes mapas
+*   botones de desplazamiento a ciudades
+*   botones de zoom
+*   marcadores coordenados
+*   ventanas emergentes con información de ciudades
+
+# smart\_cities
+
+proyecto ciudades inteligentes
